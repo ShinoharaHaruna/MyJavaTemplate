@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: SimpleTest
+  data:
+    redis:
+      host: localhost
+      port: 9763
+
+server:
+  port: 52711

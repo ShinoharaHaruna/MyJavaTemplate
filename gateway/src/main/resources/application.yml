@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: GatewayService
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: simple-test
+            uri: http://localhost:52711  # 没做 lb，等到用得上的时候再说吧
+            predicates:
+              - Path=/simple-test/**
+            filters:
+              - StripPrefix=1
+server:
+  port: 52710

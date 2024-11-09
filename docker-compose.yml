@@ -1,0 +1,12 @@
+services:
+  redis:
+    image: redis:7.4.1
+    container_name: RedisInstance
+    ports:
+      - "9763:6379"
+    # 仅在需要持久化时启用
+    # volumes:
+    #   - ${REDIS_DATA}:/data
+    deploy:
+      restart_policy:
+        condition: unless-stopped
